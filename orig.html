@@ -1,0 +1,415 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>iOS Version History Chart</title>
+	<meta name="description" content="iOS version history chart">
+	<meta name="author" content="Will Hains">
+	<meta name="keywords" content="ios version, ios versions, ios beta, ios beta version, ios beta versions, ios release date, ios release dates, release date, release dates, will hains, wil hains, will haynes, wil haynes, will haines, wil haines, will heinz, wil heinz, apple, iphone, ipad, imac, apple tv, mac, java, software, programming, design, ui, ux, ui design, ux design, ui programming, gui, gui programming, time lapse, timelapse, japan, tokyo, japanese, australia"
+
+	<meta name="viewport" content="width=device-width">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Days+One|Open+Sans:400italic,700italic,400,700);
+
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+/* ===== Primary Styles ========================================================
+   Author:
+   ========================================================================== */
+
+.chart
+{
+	display: table-cell;
+}
+
+header,
+footer
+{
+	margin-left: 40px;
+	font-family: 'Open Sans', 'Verdana', serif;
+}
+h1,h2,h3,h4,h5,h6{font-family:'Days One';font-weight:normal;}
+h1,h2{text-transform:capitalize;}
+
+
+
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+	/* Style adjustments for viewports that meet the condition */
+}
+
+/* =============================================================================
+   Non-Semantic Helper Classes
+   ========================================================================== */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* =============================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+</style>
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      var oneDay = 1000*60*60*24;
+      Date.daysBetween = function(date1, date2)
+      {
+	      var date1_ms = date1.getTime();
+	      var date2_ms = date2.getTime();
+	      var difference_ms = Math.abs(date1_ms - date2_ms);
+	      return Math.round(difference_ms/oneDay);
+      };
+
+      function drawChart() {
+
+	    // Release dates of each version; source = http://en.wikipedia.org/wiki/IOS_SDK
+	    var releaseDates = {
+	    	"iPhone OS 2.0":
+	    	{
+		    	"beta 1": new Date("Mar 27, 2008"),
+		    	"beta 2": new Date("Mar 27, 2008"),
+		    	"beta 3": new Date("Apr 08, 2008"),
+		    	"beta 4": new Date("Apr 23, 2008"),
+		    	"beta 5": new Date("May 06, 2008"),
+		    	"beta 6": new Date("May 28, 2008"),
+		    	"beta 7": new Date("Jun 09, 2008"),
+		    	"beta 8": new Date("Jun 26, 2008"),
+		    	"FINAL":  new Date("Jul 11, 2008")
+	    	},
+	    	"iPhone OS 2.1":
+	    	{
+		    	"beta 1": new Date("Jul 24, 2008"),
+		    	"beta 2": new Date("Jul 30, 2008"),
+		    	"beta 3": new Date("Aug 08, 2008"),
+		    	"beta 4": new Date("Aug 16, 2008"),
+		    	"FINAL":  new Date("Sep 12, 2008")
+	    	},
+	    	"iPhone OS 2.2":
+	    	{
+		    	"beta 1": new Date("Sep 25, 2008"),
+		    	"beta 2": new Date("Oct 24, 2008"),
+		    	"FINAL":  new Date("Nov 20, 2008")
+	    	},
+	    	"iPhone OS 3.0":
+	    	{
+		    	"beta 1": new Date("Mar 17, 2009"),
+		    	"beta 2": new Date("Mar 31, 2009"),
+		    	"beta 3": new Date("Apr 14, 2009"),
+		    	"beta 4": new Date("Apr 28, 2009"),
+		    	"beta 5": new Date("May 06, 2009"),
+		    	"beta 6": new Date("Jun 08, 2009"),
+		    	"FINAL":  new Date("Jun 17, 2009")
+	    	},
+	    	"iPhone OS 3.1":
+	    	{
+		    	"beta 1": new Date("Jun 30, 2009"),
+		    	"beta 2": new Date("Jul 14, 2009"),
+		    	"beta 3": new Date("Jul 27, 2009"),
+		    	"FINAL":  new Date("Sep 9, 2009")
+	    	},
+	    	"iOS 4.0":
+	    	{
+		    	"beta 1": new Date("Apr 8, 2010"),
+		    	"beta 2": new Date("Apr 20, 2010"),
+		    	"beta 3": new Date("May 4, 2010"),
+		    	"beta 4": new Date("May 18, 2010"),
+		    	"beta 5": new Date("Jun 7, 2010"),
+		    	"FINAL":  new Date("Jun 21, 2010")
+	    	},
+	    	"iOS 4.1":
+	    	{
+		    	"beta 1": new Date("Jul 14, 2010"),
+		    	"beta 2": new Date("Jul 27, 2010"),
+		    	"beta 3": new Date("Aug 03, 2010"),
+		    	"FINAL":  new Date("Sep 08, 2010")
+	    	},
+	    	"iOS 4.2":
+	    	{
+		    	"beta 1": new Date("Sep 15, 2010"),
+		    	"beta 2": new Date("Sep 28, 2010"),
+		    	"beta 3": new Date("Oct 12, 2010"),
+		    	"beta 4": new Date("Nov 01, 2010"),
+		    	"FINAL":  new Date("Nov 22, 2010")
+	    	},
+	    	"iOS 4.3":
+	    	{
+		    	"beta 1": new Date("Jan 12, 2011"),
+		    	"beta 2": new Date("Jan 19, 2011"),
+		    	"beta 3": new Date("Feb 1, 2011"),
+		    	"beta 4": new Date("Mar 3, 2011"),
+		    	"FINAL":  new Date("Mar 9, 2011")
+	    	},
+	    	"iOS 5.0":
+	    	{
+		    	"beta 1": new Date("Jun 6, 2011"),
+		    	"beta 2": new Date("Jun 24, 2011"),
+		    	"beta 3": new Date("Jul 11, 2011"),
+		    	"beta 4": new Date("Jul 22, 2011"),
+		    	"beta 5": new Date("Aug 6, 2011"),
+		    	"beta 6": new Date("Aug 19, 2011"),
+		    	"beta 7": new Date("Aug 31, 2011"),
+		    	"beta 8": new Date("Oct 4, 2011"),
+		    	"FINAL":  new Date("Oct 12, 2011")
+	    	},
+	    	"iOS 5.1":
+	    	{
+		    	"beta 1": new Date("Nov 28, 2011"),
+		    	"beta 2": new Date("Dec 12, 2011"),
+		    	"beta 3": new Date("Jan 9, 2012"),
+		    	"FINAL":  new Date("Mar 7, 2012")
+	    	},
+	    	"iOS 6.0":
+	    	{
+		    	"beta 1": new Date("Jun 11, 2012"),
+		    	"beta 2": new Date("Jun 26, 2012"),
+		    	"beta 3": new Date("Jul 16, 2012"),
+		    	"beta 4": new Date("Aug 6, 2012"),
+		    	"beta 5": new Date("Sep 12, 2012"),
+		    	"FINAL": new Date("Sep 19, 2012")
+	    	},
+	    	"iOS 6.1":
+	    	{
+		    	"beta 1": new Date("Nov 1, 2012"),
+		    	"beta 2": new Date("Nov 12, 2012"),
+                "beta 3": new Date("Dec 3, 2012"),
+                "beta 4": new Date("Dec 17, 2012"),
+                "beta 5": new Date("Jan 26, 2013"),
+                "FINAL": new Date("Jan 28, 2013")
+	    	},
+	    	"iOS 6.2":
+	    	{
+	    	}
+	    };
+
+        // Create the data tables
+        var betaAgeData = new Array();
+        var finalAgeData = new Array();
+        var betaAgeData_i = 0;
+        var finalAgeData_i = 0;
+        betaAgeData[betaAgeData_i++] = ["Version", "beta 1", "beta 2", "beta 3", "beta 4", "beta 5", "beta 6", "beta 7", "beta 8"]; // Fuck it, let's be lazy
+        finalAgeData[finalAgeData_i++] = ["Version", "FINAL"];
+        var prevVersionFinalAges;
+        var prevFinalDate;
+        for(versionName in releaseDates)
+        {
+        	// Calculate age of each beta
+        	var version = releaseDates[versionName];
+	        var versionBetaAges = new Array();
+	        versionBetaAges[0] = versionName;
+	        for(j = 1; j < betaAgeData[0].length; j++)
+	        {
+	        	var betaDate = version[betaAgeData[0][j]];
+	        	if(betaDate)
+	        	{
+		        	var nextBetaDate = version[betaAgeData[0][j+1]];
+		        	if(!nextBetaDate) nextBetaDate = version["FINAL"];
+		        	if(!nextBetaDate) nextBetaDate = new Date();
+		        	versionBetaAges[j] = Date.daysBetween(betaDate, nextBetaDate);
+		        }
+		        else
+		        {
+			        versionBetaAges[j] = 0;
+		        }
+	        }
+	        betaAgeData[betaAgeData_i++] = versionBetaAges;
+
+	        // Calculate of each final version (from final to final, i.e. public releases only)
+	        var finalDate = version["FINAL"];
+	        if(!finalDate) finalDate = new Date();
+	        if(prevFinalDate)
+	        {
+	        	prevVersionFinalAges[1] = Date.daysBetween(finalDate, prevFinalDate);
+	        }
+	        prevFinalDate = finalDate;
+	        finalAgeData[finalAgeData_i++] = prevVersionFinalAges = [versionName, 0];
+        }
+
+        var betaData = google.visualization.arrayToDataTable(betaAgeData);
+        var finalData = google.visualization.arrayToDataTable(finalAgeData);
+
+        // Instantiate and draw our charts, passing in some options.
+        var betaChart = new google.visualization.BarChart(document.getElementById('chart_beta'));
+        var finalChart = new google.visualization.BarChart(document.getElementById('chart_final'));
+        betaChart.draw(
+        	betaData,
+        	{
+        		'fontName':'Verdana',
+        		'fontSize':11,
+        		'titleTextStyle':{'fontSize':14},
+        		'title':'iOS Days in Beta',
+        		'isStacked':true,
+        		'legend':{'position':'bottom'},
+                'width':950,
+                'height':400,
+                'hAxis':{'viewWindowMode':'maximized'}
+            });
+        finalChart.draw(
+        	finalData,
+        	{
+        		'fontName':'Verdana',
+        		'fontSize':11,
+        		'titleTextStyle':{'fontSize':14},
+        		'title':'iOS Days in Final',
+        		'isStacked':true,
+        		'legend':{'position':'bottom'},
+                'width':450,
+                'height':400,
+                'hAxis':{'viewWindowMode':'maximized'},
+                'colors':['#aaa'],
+                'vAxis':{'textPosition':'none'},
+                'chartArea':{'left':10, 'right':10}
+        	});
+
+      }
+    </script>
+
+<script type="text/javascript" language="javascript" src="http://assets.tumblr.com/javascript/tumblelog.js?cce02fd0a15b0a4373013178e6c56abc"></script><meta http-equiv="x-dns-prefetch-control" content="off"/></head>
+<body>
+<header>
+
+	<h2>THINKY BITS</h2>
+	<h3>iOS version release date history</h3>
+
+	<p>Data source: <a href="http://en.wikipedia.org/wiki/IOS_SDK">Wikipedia</a></p>
+
+</header>
+<div role="main">
+
+	<div class="chart" id="chart_beta"></div>
+	<div class="chart" id="chart_final"></div>
+
+</div>
+<footer>
+
+	<p>Made by Will Hains [<a href="http://willhains.com/">blog</a>] [<a href="https://twitter.com/#!/willhains">twitter</a>]. Please link back to this site if you use it in yours.</p>
+
+	<p>Notes:<ul>
+		<li>GM releases are treated as betas, so a GM after "beta 4" will be shown as "beta 5".</li>
+		<li>The data comes from <a href="http://en.wikipedia.org/wiki/IOS_SDK#SDK_release_history">this table on Wikipedia</a>.
+			If you notice a discrepancy in the data, please update Wikipedia and <a href="https://twitter.com/#!/willhains">let me know</a>.
+		</li>
+	</ul>
+	</p>
+
+	<p>More info about this chart and how it was made can be found <a href="http://willhains.com/post/26275296728/ios-version-history">here</a>.</p>
+
+</footer>
+
+<script>
+	var _gaq=[['_setAccount','UA-16919250-1'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
